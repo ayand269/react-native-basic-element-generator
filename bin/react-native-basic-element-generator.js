@@ -29,12 +29,10 @@ let devDependencies = [
 ]
 
 function addLineToAFile(filePath, replaceBy, replaceWith) {
-    fs.readFile(filePath, 'utf8')
-        .then((data) => {
-            const updatedContent = data.replace(replaceBy, replaceWith)
-            
-            fs.writeFileSync(filePath, updatedContent, 'utf8')
-        })
+    let data = fs.readFileSync(filePath, 'utf8')
+    
+    const updatedContent = data.replace(replaceBy, replaceWith)
+    fs.writeFileSync(filePath, updatedContent, 'utf8')
 }
 
 // Parse command-line arguments using minimist
@@ -82,8 +80,8 @@ apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")`
 execSync(`yarn add ${allPackages.join(' ')}`, { stdio: 'inherit' });
 execSync(`yarn add -D ${devDependencies.join(' ')}`, { stdio: 'inherit' });
 
-if(gitRepo){
-    execSync(`git init && git remote add origin ${gitRepo} && git add . && git commit -m "First Commit" && git checkout -b master && git push -u origin master`, { stdio: 'inherit' });
+if (gitRepo) {
+    execSync(`git init && git remote add origin ${gitRepo} && git add . && git commit -m "First Commit" && git push -u origin master`, { stdio: 'inherit' });
 }
 
 execSync(`code .`, { stdio: 'inherit' });

@@ -1,6 +1,6 @@
 {
   "name": "react-native-basic-element-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This plugin provides a react native project template that contain a very usefull file structure, authentication flow with redux, react navigation and setup all basic packages.",
   "keywords": [
     "react-native",
