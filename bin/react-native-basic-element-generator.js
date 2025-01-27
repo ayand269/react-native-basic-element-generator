@@ -47,7 +47,7 @@ if (!projectName) {
 }
 
 
-execSync(`npx react-native init ${projectName}`, { stdio: 'inherit' });
+execSync(`npx @react-native-community/cli@latest init ${projectName}`, { stdio: 'inherit' });
 
 const templateDir = __dirname + '/Structure';
 const projectDir = process.cwd() + '/' + projectName;
